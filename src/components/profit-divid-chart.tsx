@@ -10,13 +10,13 @@ export function ProfitDividChart() {
     const [financeData, financeDataSet] = useState<any>(null)
     useEffect(() => {
         async function fetchMyAPI() {
-            let response = await fetch('https://sheltered-stream-53629.herokuapp.com/get-financial-data')
+            let response = await fetch('https://finance-meter-server.herokuapp.com/get-financial-data')
             response = await response.json()
             let request = {
                 "financeData": response,
                 "withDividends": true
             }
-            let transform_results: any = await fetch('https://sheltered-stream-53629.herokuapp.com/transform-finance-data', {
+            let transform_results: any = await fetch('https://finance-meter-server.herokuapp.com/transform-finance-data', {
                 headers: {
                     'Content-Type': 'application/json'
                 },
