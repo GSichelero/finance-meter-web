@@ -10,13 +10,13 @@ export function ValueChart() {
     const [financeData, financeDataSet] = useState<any>(null)
     useEffect(() => {
         async function fetchMyAPI() {
-            let response = await fetch('http://localhost:3333/get-financial-data')
+            let response = await fetch('https://sheltered-stream-53629.herokuapp.com/get-financial-data')
             response = await response.json()
             let request = {
                 "financeData": response,
                 "withDividends": false
             }
-            let transform_results: any = await fetch('http://localhost:3333/transform-finance-data', {
+            let transform_results: any = await fetch('https://sheltered-stream-53629.herokuapp.com/transform-finance-data', {
                 headers: {
                     'Content-Type': 'application/json'
                 },
