@@ -40,7 +40,7 @@ export function UploadExcelFiles() {
         <div>
             <h1>Upload Report Files</h1>
             <p>This is the upload report excel files page</p>
-            <form action="/upload-report-file" method="post" encType="multipart/form-data">
+            <form action="https://finance-meter-server.herokuapp.com/upload-report-file" method="post" encType="multipart/form-data">
                 <input type="file" name="reports" multiple />
                 <input type="submit" value="Upload" />
             </form>
